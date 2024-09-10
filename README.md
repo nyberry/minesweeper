@@ -48,21 +48,9 @@ First, each time any new knowledge is gained, call a function to update the list
 
 Note the loop: it is possible that updating the sentences, safes and cells might unlock new knowledge. So we loop over this procedure until no new knowledge (changes) are made. Failing to loop here is likely why some of the Check50 tests were failing.
 
-(Note that for this to work, the "mark" methods in the Sentence and self classes must return True if they make a change).
+Note also that for this to work, the "mark" methods in the Sentence and self classes must return True if they make a change.
 
-Similarly, each time a new inference is made, it is possible that this new knowledge can unlock further inferences, so we loop here too:
-
-        while True:
-            inferences = self.infer()
-            if inferences:
-                for inference in inferences:
-                    self.knowledge.append(inference)
-                self.update_sentences_safes_and_mines()
-            else:
-                # break from loop if no changes have been made
-                break
-
-For clarity, seperating out the function to infer new knowledge:
+Here is a function to infer new knowledge:
 
        def infer(self):
 
@@ -73,6 +61,18 @@ For clarity, seperating out the function to infer new knowledge:
             if s1.cells.issubset(s2.cells)
         ]
         return [inference for inference in inferences if inference not in self.knowledge]
+
+It is possible that this new inferred knowledge can unlock further inferences, so we loop here too:
+
+        while True:
+            inferences = self.infer()
+            if inferences:
+                for inference in inferences:
+                    self.knowledge.append(inference)
+                self.update_sentences_safes_and_mines()
+            else:
+                # break from loop if no changes have been made
+                break
 
 
 Result:
