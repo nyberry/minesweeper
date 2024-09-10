@@ -61,7 +61,7 @@ Similarly, each time a new inference is made, it is possible that this new knowl
             else:
                 break
 
-calling a function to infer new knowledge:
+For clarity, seperating out the function to infer new knowledge:
 
        def infer(self):
 
