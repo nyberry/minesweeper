@@ -16,7 +16,7 @@ Initially I struggled to pass all the Check50 tests. Specifically:
 
 These are some fixes:
 
-First, each time any new knowledge is gained, call a function to update all sentences, plus the lists of mines and safes. This may be knowledge gained when making a move, or by inference.
+First, each time any new knowledge is gained, call a function to update the list of mines and safes, **plus all sentences in the knowledge base** (not just the mines and safes as hinted in the course problem specifcation). This may be knowledge gained when making a new move, or later by inference.
 
     def update_sentences_safes_and_mines(self):
      
