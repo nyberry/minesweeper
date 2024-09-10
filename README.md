@@ -62,7 +62,7 @@ Here is a function to infer new knowledge:
         ]
         return [inference for inference in inferences if inference not in self.knowledge]
 
-It is possible that this new inferred knowledge can unlock further inferences, so we loop here too:
+It is possible that this new inferred knowledge can unlock further inferences, so we loop here too, calling the function to update the knowledge base with each iteration:
 
         while True:
             inferences = self.infer()
