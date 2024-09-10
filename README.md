@@ -23,11 +23,11 @@ When may new knowledge be gained?
 
 And also:
 
-* After updating the list of safe squares - as an existing sentence might contain one of these squares, and updating this sentence might allow new inferences.
-* After updating the list of mines - same reason.
 * After updating the list of sentences - as a new inference might be possible.
 
-To capture this new knowledge, we can call a function to update the list of mines and safes, **plus all sentences in the knowledge base** - not just the mines and safes as hinted in the course problem specifcation.
+The list of sentences should be updated any time a new mine or safe square is discovered, because existing sentences might include the mine or safe square.
+
+To capture new knowledge, we can call a function to update the list of mines and safes, **plus all sentences in the knowledge base** - not just the mines and safes as hinted in the course problem specifcation.
 
     def update_sentences_safes_and_mines(self):
      
