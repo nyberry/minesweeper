@@ -19,12 +19,15 @@ The problem appeared to be that the knowledge base was not being fully updated a
 When may new knowledge be gained?
 
 * After making a move
-* After updating the list of safe squares (an existing sentence might contain one of these squares)
-* After updating the list of mines (and existing sentence might contain one of these)
-* After updating the list of sentences (a new inference might be possible)
-* After making an inference (safe squares or mines might be found)
+* After making an inference - safe squares or mines might be found.
 
-One way to approach this seems to be, each time any new knowledge is gained, to call a function to update the list of mines and safes, **plus all sentences in the knowledge base** (not just the mines and safes as hinted in the course problem specifcation).
+But new knowledge may also be gained:
+
+* After updating the list of safe squares - as an existing sentence might contain one of these squares, and updating this sentence might allow new inferences.
+* After updating the list of mines - same reason.
+* After updating the list of sentences - as a new inference might be possible.
+
+To capture this new knowledge, we can call a function to update the list of mines and safes, **plus all sentences in the knowledge base** - not just the mines and safes as hinted in the course problem specifcation.
 
     def update_sentences_safes_and_mines(self):
      
