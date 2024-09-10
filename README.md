@@ -48,6 +48,8 @@ First, each time any new knowledge is gained, call a function to update the list
 
 Note the loop: it is possible that updating the sentences, safes and cells might unlock new knowledge. So we loop over this procedure until no new knowledge (changes) are made. Failing to loop here is likely why some of the Check50 tests were failing.
 
+(Note that for this to work, the "mark" methods in the Sentence and self classes must return True if they make a change).
+
 Similarly, each time a new inference is made, it is possible that this new knowledge can unlock further inferences, so we loop here too:
 
         while True:
