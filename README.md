@@ -14,7 +14,9 @@ Initially I struggled to pass all the Check50 tests. Specifically:
     Cause
     did not find (1, 0) in mines when possible to conclude mine
 
-Each time any new knowledge is gained, call a function to update all sentences, plus the lists of mines and safes. This may be knowledge gained when making a move, or by inference.
+These are some fixes:
+
+First, each time any new knowledge is gained, call a function to update all sentences, plus the lists of mines and safes. This may be knowledge gained when making a move, or by inference.
 
     def update_sentences_safes_and_mines(self):
      
