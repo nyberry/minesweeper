@@ -59,6 +59,7 @@ Similarly, each time a new inference is made, it is possible that this new knowl
                     self.knowledge.append(inference)
                 self.update_sentences_safes_and_mines()
             else:
+                # break from loop if no changes have been made
                 break
 
 For clarity, seperating out the function to infer new knowledge:
