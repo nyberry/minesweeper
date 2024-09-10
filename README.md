@@ -21,7 +21,7 @@ When may new knowledge be gained?
 * After making a move
 * After making an inference - safe squares or mines might be found.
 
-But new knowledge may also be gained:
+And also:
 
 * After updating the list of safe squares - as an existing sentence might contain one of these squares, and updating this sentence might allow new inferences.
 * After updating the list of mines - same reason.
